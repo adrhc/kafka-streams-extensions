@@ -1,7 +1,7 @@
 # Kafka Streams DSL extensions
 ```jshelllanguage
 // kStreamsBuilder is a "native" Kafka StreamsBuilder  
-StreamsBuilderEx streamsBuilder = StreamsBuilderEx.enhance(kStreamsBuilder);
+StreamsBuilderEx streamsBuilder = StreamsBuilderEx.extend(kStreamsBuilder);
 KStream stream = streamsBuilder.stream(...);
 
 /*
