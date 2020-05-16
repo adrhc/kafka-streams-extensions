@@ -16,4 +16,4 @@ fi
 # these does not require <forkCount> usage:
 # ./clean.install.sh -P staging-only
 # ./clean.install.sh -P production-only
-$MVN -e -Dmaven.javadoc.skip=true clean install surefire-report:report-only surefire-report:failsafe-report-only "$@"
+$MVN -e clean install "$@"
