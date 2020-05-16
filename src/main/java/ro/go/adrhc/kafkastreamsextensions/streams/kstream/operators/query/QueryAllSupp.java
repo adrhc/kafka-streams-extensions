@@ -18,6 +18,10 @@ public class QueryAllSupp<OV, NV> implements ValueTransformerSupplier<OV, List<N
 		this.storeName = storeName;
 	}
 
+	private static <T> T valueFrom(ValueAndTimestamp valueAndTimestamp) {
+		return (T) valueAndTimestamp.value();
+	}
+
 	@Override
 	public ValueTransformer<OV, List<NV>> get() {
 		return new ValueTransformer<>() {
@@ -44,9 +48,5 @@ public class QueryAllSupp<OV, NV> implements ValueTransformerSupplier<OV, List<N
 			@Override
 			public void close() {}
 		};
-	}
-
-	private static <T> T valueFrom(ValueAndTimestamp valueAndTimestamp) {
-		return (T) valueAndTimestamp.value();
 	}
 }
