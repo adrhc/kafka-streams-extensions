@@ -23,4 +23,4 @@ stream
 stream.peek(Consumer<KPeekParams<K, V>> consumer)
 ```
 ### Versioning
-The versions will follow the org.apache.kafka:kafka-streams versions.
+The versions will follow the `org.apache.kafka:kafka-streams` versions.
