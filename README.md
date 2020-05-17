@@ -3,7 +3,7 @@ This library provides some wrappers over kafka streams classes containing additi
 ### KStreams operators
 ```jshelllanguage
 // kStreamsBuilder is a "native" Kafka StreamsBuilder  
-StreamsBuilderEx streamsBuilder = StreamsBuilderEx.extend(kStreamsBuilder);
+StreamsBuilderEx streamsBuilder = StreamsBuilderEx.from(kStreamsBuilder);
 KStream stream = streamsBuilder.stream(...);
 
 /*
