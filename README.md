@@ -1,4 +1,6 @@
 # Kafka Streams DSL extensions
+This library provides some wrappers over kafka streams classes containing additional KStreams operators (e.g. `allOf`).
+### KStreams operators
 ```jshelllanguage
 // kStreamsBuilder is a "native" Kafka StreamsBuilder  
 StreamsBuilderEx streamsBuilder = StreamsBuilderEx.extend(kStreamsBuilder);
@@ -20,3 +22,5 @@ stream
  */
 stream.peek(Consumer<KPeekParams<K, V>> consumer)
 ```
+### Versioning
+The versions will follow the org.apache.kafka:kafka-streams versions.
