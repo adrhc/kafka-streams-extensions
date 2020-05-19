@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>ro.go.adrhc</groupId>
     <artifactId>kafka-streams-extensions</artifactId>
-    <version>2.5.0-1</version>
+    <version>2.5.0-2</version>
     <name>kafka-streams-extensions</name>
     <description>kafka streams extensions</description>
 
