@@ -24,7 +24,7 @@ public abstract class AbstractQueryAllSupp<V, VR>
 	@Override
 	public ValueTransformer<V, VR> get() {
 		return new ValueTransformer<>() {
-			private KeyValueStore<String, ?> store;
+			private KeyValueStore<?, ?> store;
 
 			@Override
 			public void init(ProcessorContext context) {
