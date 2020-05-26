@@ -2,6 +2,7 @@ package ro.go.adrhc.kafkastreamsextensions.streams.kstream.operators.aggregation
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.kafka.streams.kstream.Windowed;
 
@@ -15,6 +16,7 @@ import static ro.go.adrhc.kafkastreamsextensions.streams.kstream.operators.util.
 @Getter
 @AllArgsConstructor
 @Slf4j
+@ToString
 public class LocalDateBasedKey<T> {
 	private static final ThreadLocal<MessageFormat> WINDOW_KEY =
 			ThreadLocal.withInitial(() -> new MessageFormat("{0}-{1}"));

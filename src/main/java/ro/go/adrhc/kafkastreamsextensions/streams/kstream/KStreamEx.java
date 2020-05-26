@@ -13,6 +13,7 @@ import ro.go.adrhc.kafkastreamsextensions.streams.kstream.operators.aggregation.
 import ro.go.adrhc.kafkastreamsextensions.streams.kstream.operators.peek.KPeek;
 import ro.go.adrhc.kafkastreamsextensions.streams.kstream.operators.peek.KPeekParams;
 import ro.go.adrhc.kafkastreamsextensions.streams.kstream.operators.query.QueryAllSupp;
+import ro.go.adrhc.kafkastreamsextensions.streams.kstream.operators.query.QueryAllValuesSupp;
 
 import java.time.temporal.TemporalUnit;
 import java.util.List;
@@ -115,8 +116,14 @@ public class KStreamEx<K, V> implements KStream<K, V> {
 	 * It queries storeName returning all its values as a List.
 	 * Ignores the received key and value so it is useful mainly for debugging/reporting purposes.
 	 */
-	public <NV> KStreamEx<K, List<NV>> allOf(String storeName) {
-		return new KStreamEx<>(delegate.transformValues(new QueryAllSupp<>(storeName), storeName), streamsBuilder);
+	public <VR> KStreamEx<K, List<VR>> allValuesOf(String storeName) {
+		return new KStreamEx<>(delegate.transformValues(
+				new QueryAllValuesSupp<>(storeName), storeName), streamsBuilder);
+	}
+
+	public <KR, VR> KStreamEx<K, List<KeyValue<KR, VR>>> allOf(String storeName) {
+		return new KStreamEx<>(delegate.transformValues(
+				new QueryAllSupp<>(storeName), storeName), streamsBuilder);
 	}
 
 	public WindowByEx<K, V> windowedBy(int windowSize, TemporalUnit unit) {

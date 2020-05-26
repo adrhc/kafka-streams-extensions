@@ -8,7 +8,13 @@ KStream stream = streamsBuilder.stream(...);
 
 /*
  * It queries storeName returning all its values as a List.
- * Ignores the received key and value so it is useful mainly for debugging/reporting purposes
+ * It ignores the received value so it is useful mainly for debugging/reporting purposes
+*/
+stream.allValuesOf(String storeName);
+
+/*
+ * It queries storeName returning all its records as a List of KeyValue.
+ * It ignores the received value so it is useful mainly for debugging/reporting purposes
 */
 stream.allOf(String storeName);
 
